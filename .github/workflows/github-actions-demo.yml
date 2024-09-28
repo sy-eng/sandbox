@@ -19,3 +19,10 @@ jobs:
       - run: pwd
       - name: Update README
         run: echo "### Latest Art" > README2.md
+      - name: Commit and push changes
+        run: |
+         git config --local user.email "action@github.com"
+         git config --local user.name "GitHub Action"
+         git add README.md
+         git commit -m "Update README with new art"
+         git push
